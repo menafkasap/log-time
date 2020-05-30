@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
+  <a class="navbar-brand mr-auto p-2" href=/>Anasayfa</a>
+  <% if current_user %>
+    <a class="navbar-brand p-2" href=/logout>Çıkış Yap</a>
+  <% else %>
+    <a class="navbar-brand p-2" href=/signup>Üye Ol</a>
+    <a class="navbar-brand p-2" href=/login>Giriş Yap</a>
+  <% end %>
+</nav> 

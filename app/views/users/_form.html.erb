@@ -1,0 +1,52 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= user.errors.count %> hata sebebiyle kayıt olamadınız:</h4>
+
+      <ul class="list-group">
+        <% user.errors.full_messages.each do |message| %>
+          <li class="list-group-item list-group-item-danger"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form>
+    <div class="form-group">
+      <%= form.label :İsim %>
+      <%= form.text_field :first_name, class: 'form-control', id: 'first-name' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :soyisim %>
+      <%= form.text_field :last_name, class: 'form-control', id: 'last-name' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :email_adresi %>
+      <%= form.text_field :email, class: 'form-control', placeholder: 'isim@domain.com', id: 'email' %>
+      <small id="emailHelp" class="form-text text-muted">
+        Email adresiniz kimseyle paylaşılmayacaktır.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :Şifre %>
+      <%= form.password_field :password, class: 'form-control', id: 'password' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :'Şifre(Tekrar)' %>
+      <%= form.password_field :password_confirmation, class: 'form-control', id: 'password-confirmation' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.check_box :admin, id: 'admin' %>
+      <%= form.label :admin_olmak_istiyorum %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit 'Üye Ol', class: 'btn btn-success' %>
+    </div>
+  </form>
+<% end %>

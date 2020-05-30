@@ -1,0 +1,19 @@
+<div class="container">
+  <p id="alert"><%= alert %></p>
+  <h2>Giriş Yap</h2>
+  <%= form_tag sessions_path do |form| %>
+    <div class="form-group">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, nil, class: 'form-control', id: 'email' %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :Şifre %>
+      <%= password_field_tag :password, nil, class: 'form-control', id: 'password' %>
+    </div>
+
+    <div class="form-group">
+      <%= submit_tag 'Giriş Yap', class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>
