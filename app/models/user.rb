@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
   
-  has_many :user_logs
+  has_many :time_logs
   validates :email, presence: true, uniqueness: true
 end

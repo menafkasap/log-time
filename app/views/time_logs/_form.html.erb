@@ -1,10 +1,10 @@
-<%= form_with(model: user_log, local: true) do |form| %>
-  <% if user_log.errors.any? %>
+<%= form_with(model: time_log, local: true) do |form| %>
+  <% if time_log.errors.any? %>
     <div id="error_explanation">
-      <h4><%= user_log.errors.count %> hata sebebiyle zaman kaydı oluşturulamadı:</h4>
+      <h4><%= time_log.errors.count %> hata sebebiyle zaman kaydı oluşturulamadı:</h4>
 
       <ul>
-        <% user_log.errors.full_messages.each do |message| %>
+        <% time_log.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -15,13 +15,8 @@
     <div class="form-group">
       <%= form.label :zaman_tipi %>
       <%= form.select(
-        :logType, 
-        options_for_select([
-          ['Zaman Tipi 1'], 
-          ['Zaman Tipi 2'],
-          ['Zaman Tipi 3'],
-          ['Zaman Tipi 4']
-        ]),
+        :time_type, 
+        options_for_select(['Zaman Tipi 1', 'Zaman Tipi 2','Zaman Tipi 3','Zaman Tipi 4']),
         {},
         class: 'form-control',
         id: 'log-type'
@@ -30,12 +25,12 @@
 
     <div class="form-group">
       <%= form.label 'Başlangıç Zamanı' %>
-      <%= form.datetime_select :startTime, id: 'start-time' %>
+      <%= form.datetime_select :start_time, id: 'start-time' %>
     </div>
 
     <div class="form-group">
       <%= form.label 'Bitiş Zamanı' %>
-      <%= form.datetime_select :finishTime, id: 'finish-time' %>
+      <%= form.datetime_select :finish_time, id: 'finish-time' %>
     </div>
     
     <div class="form-group">

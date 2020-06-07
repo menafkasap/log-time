@@ -15,13 +15,13 @@
       </thead>
 
       <tbody>
-        <% @user_logs.each do |user_log| %>
+        <% @time_logs.each do |time_log| %>
           <tr>
-            <td><%= user_log.comment %></td>
-            <td><%= user_log.logType %></td>
-            <td><%= user_log.startTime.strftime('%d/%m/%Y - %H:%M') %></td>
-            <td><%= user_log.finishTime.strftime('%d/%m/%Y - %H:%M') %></td>
-            <td><%= user_log.user.first_name + ' ' + user_log.user.last_name %></td>
+            <td><%= time_log.comment %></td>
+            <td><%= time_log.time_type %></td>
+            <td><%= time_log.start_time.strftime('%d/%m/%Y - %H:%M') %></td>
+            <td><%= time_log.finish_time.strftime('%d/%m/%Y - %H:%M') %></td>
+            <td><%= time_log.user.first_name + ' ' + time_log.user.last_name %></td>
           </tr>
         <% end %>
       </tbody>
