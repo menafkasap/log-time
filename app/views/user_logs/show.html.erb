@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @user_log.comment %>
+</p>
+
+<p>
+  <strong>Logtype:</strong>
+  <%= @user_log.logType %>
+</p>
+
+<p>
+  <strong>Starttime:</strong>
+  <%= @user_log.startTime %>
+</p>
+
+<p>
+  <strong>Finishtime:</strong>
+  <%= @user_log.finishTime %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_log.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_user_log_path(@user_log) %> |
+<%= link_to 'Back', user_logs_path %>

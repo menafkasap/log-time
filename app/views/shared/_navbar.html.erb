@@ -1,11 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href=/>Anasayfa</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
+  <a class="navbar-brand mr-auto p-2" href=/>Anasayfa</a>
   <% if current_user %>
-    <a class="navbar-brand" href=logout>Çıkış Yap</a>
+    <a class="navbar-brand p-2" href=logout>Çıkış Yap</a>
   <% else %>
-    <a class="navbar-brand" href=signup>Üye Ol</a>
-    <a class="navbar-brand" href=login>Giriş Yap</a>
+    <a class="navbar-brand p-2" href=signup>Üye Ol</a>
+    <a class="navbar-brand p-2" href=login>Giriş Yap</a>
   <% end %>
+
   <!-- <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

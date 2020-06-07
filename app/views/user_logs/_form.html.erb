@@ -1,0 +1,35 @@
+<%= form_with(model: user_log, local: true) do |form| %>
+  <% if user_log.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= user_log.errors.count %> hata sebebiyle zaman kaydı oluşturulamadı:</h4>
+
+      <ul>
+        <% user_log.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Yorum
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="field">
+    Zaman Tipi
+    <%= form.text_field :logType %>
+  </div>
+
+    Başlangıç Zamanı
+    <%= form.datetime_select :startTime %>
+
+  <div class="field">
+    Bitiş Zamanı
+    <%= form.datetime_select :finishTime %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,5 @@
   Rails.application.routes.draw do
+  resources :user_logs
   get 'home/index'
   resources :admin_users
 

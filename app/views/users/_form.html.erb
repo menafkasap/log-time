@@ -1,12 +1,11 @@
-<!-- <%= form_with(model: user, local: true) do |form| %>
-
+<%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h4><%= user.errors.count %> hata sebebiyle kayıt olamadınız:</h4>
 
-      <ul>
+      <ul class="list-group">
         <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li class="list-group-item list-group-item-danger"><%= message %></li>
         <% end %>
       </ul>
     </div>
@@ -14,78 +13,40 @@
 
   <form>
     <div class="form-group">
-      <label for="first_name">İsim</label>
-      <input type=first_name class="form-control" id="first_name" placeholder="İsim">
+      <%= form.label :İsim %>
+      <%= form.text_field :first_name, class: 'form-control', id: 'first-name' %>
     </div>
+
     <div class="form-group">
-      <label for="last_name">Soyisim</label>
-      <input type="inputLastName" class="form-control" id="last_name" placeholder="Soyisim">
+      <%= form.label :soyisim %>
+      <%= form.text_field :last_name, class: 'form-control', id: 'last-name' %>
     </div>
+
     <div class="form-group">
-      <label for="email">Email Adresi</label>
-      <input type="inputEmailAddress" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email adresi">
-      <small id="emailHelp" class="form-text text-muted">Email adresiniz kimseyle paylaşılmayacaktır.</small>
+      <%= form.label :email_adresi %>
+      <%= form.text_field :email, class: 'form-control', placeholder: 'isim@domain.com', id: 'email' %>
+      <small id="emailHelp" class="form-text text-muted">
+        Email adresiniz kimseyle paylaşılmayacaktır.
+      </small>
     </div>
+
     <div class="form-group">
-      <label for="password">Şifre</label>
-      <input type="inputPassword" class="form-control" id="password" placeholder="Şifre">
+      <%= form.label :Şifre %>
+      <%= form.password_field :password, class: 'form-control', id: 'password' %>
     </div>
+
     <div class="form-group">
-      <label for="password_confirmation">Şifre(Tekrar)</label>
-      <input type="inputPasswordConfirmation" class="form-control" id="password_confirmation" placeholder="Şifre">
+      <%= form.label :'Şifre(Tekrar)' %>
+      <%= form.password_field :password_confirmation, class: 'form-control', id: 'password-confirmation' %>
     </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="admin">
-      <label class="form-check-label" for="admin">Admin olmak istiyorum</label>
+
+    <div class="form-group">
+      <%= form.check_box :admin, id: 'admin' %>
+      <%= form.label :admin_olmak_istiyorum %>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div class="form-group">
+      <%= form.submit 'Üye Ol', class: 'btn btn-success' %>
+    </div>
   </form>
-<% end %>-->
-
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h4><%= user.errors.count %> hata sebebiyle kayıt olamadınız:</h4>
-
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Şifre %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :'Şifre(Tekrar)' %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :İsim %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :soyisim %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.check_box :admin %>
-    <%= form.label :admin_olmak_istiyorum %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
