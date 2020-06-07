@@ -1,35 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h2>Zaman Kayıtları</h2>
 
-<h1>User Logs</h1>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Yorum</th>
+          <th scope="col">Zaman Tipi</th>
+          <th scope="col">Başlangıç Zamanı</th>
+          <th scope="col">Bitiş Zamanı</th>
+          <th scope="col">Kullanıcı</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Yorum</th>
-      <th>Zaman Tipi</th>
-      <th>Başlangıç Zamanı</th>
-      <th>Bitiş Zamanı</th>
-      <th>Kullanıcı ID'si</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user_logs.each do |user_log| %>
-      <tr>
-        <td><%= user_log.comment %></td>
-        <td><%= user_log.logType %></td>
-        <td><%= user_log.startTime %></td>
-        <td><%= user_log.finishTime %></td>
-        <td><%= user_log.user_id %></td>
-        <td><%= link_to 'Show', user_log %></td>
-        <td><%= link_to 'Edit', edit_user_log_path(user_log) %></td>
-        <td><%= link_to 'Destroy', user_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User Log', new_user_log_path %>
+      <tbody>
+        <% @user_logs.each do |user_log| %>
+          <tr>
+            <td><%= user_log.comment %></td>
+            <td><%= user_log.logType %></td>
+            <td><%= user_log.startTime.strftime('%d/%m/%Y - %H:%M') %></td>
+            <td><%= user_log.finishTime.strftime('%d/%m/%Y - %H:%M') %></td>
+            <td><%= user_log.user.first_name + ' ' + user_log.user.last_name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
