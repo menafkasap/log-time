@@ -1,5 +1,5 @@
 {
-  "name": "user_logs",
+  "name": "log_time",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
