@@ -29,7 +29,7 @@ class TimeLogsController < ApplicationController
 
     respond_to do |format|
       if @time_log.save
-        format.html { redirect_to @time_log, notice: 'Zaman kaydı başarıyla oluşturuldu' }
+        format.html { redirect_to :root, notice: 'Zaman kaydı başarıyla oluşturuldu' }
         format.json { render :show, status: :created, location: @time_log }
       else
         format.html { render :new }

@@ -6,11 +6,11 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Yorum</th>
-          <th scope="col">Zaman Tipi</th>
-          <th scope="col">Başlangıç Zamanı</th>
-          <th scope="col">Bitiş Zamanı</th>
-          <th scope="col">Kullanıcı</th>
+          <th>Yorum</th>
+          <th>Zaman Tipi</th>
+          <th>Başlangıç Zamanı</th>
+          <th>Bitiş Zamanı</th>
+          <th>Kullanıcı</th>
         </tr>
       </thead>
 
@@ -21,7 +21,7 @@
             <td><%= time_log.time_type %></td>
             <td><%= time_log.start_time.strftime('%d/%m/%Y - %H:%M') %></td>
             <td><%= time_log.finish_time.strftime('%d/%m/%Y - %H:%M') %></td>
-            <td><%= time_log.user.first_name + ' ' + time_log.user.last_name %></td>
+            <td><%= time_log.user.first_name %> <%= time_log.user.last_name %></td>
           </tr>
         <% end %>
       </tbody>
